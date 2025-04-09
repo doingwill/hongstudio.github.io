@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<article class="game-detail">
+  <div class="container">
+    <!-- 游戏标题和元信息 -->
+    <header class="game-header">
+      <h1>{{ page.title }}</h1>
+      <div class="meta">
+        <span class="release-date">发布日期: {{ page.release_date | date: "%Y-%m-%d" }}</span>
+      </div>
+    </header>
+
+    <!-- 游戏截图轮播 -->
+    <div class="screenshot-carousel">
+      {% for screenshot in page.screenshots %}
+        <div class="carousel-item">
+          <img src="{{ screenshot | relative_url }}" alt="游戏截图">
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- 游戏描述和下载链接 -->
+    <div class="game-content">
+      {{ content }}  <!-- 从 _games/game-1.md 的 Markdown 内容渲染 -->
+      <div class="download-buttons">
+        <a href="{{ page.appstore }}" class="btn appstore-btn" target="_blank">
+          <i class="fab fa-apple"></i> App Store
+        </a>
+        <a href="{{ page.googleplay }}" class="btn googleplay-btn" target="_blank">
+          <i class="fab fa-google-play"></i> Google Play
+        </a>
+      </div>
+    </div>
+  </div>
+</article>

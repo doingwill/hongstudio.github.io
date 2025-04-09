@@ -1,0 +1,21 @@
+// 响应式容器
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// 游戏网格布局
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+// 下载按钮样式
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  &.appstore-btn { background: #000; color: white; }
+  &.googleplay-btn { background: #4285f4; color: white; }
+}
