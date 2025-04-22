@@ -1,8 +1,0 @@
-- name: 首页
-  url: /
-- name: 游戏作品
-  url: /games/
-- name: 新闻
-  url: /blog/
-- name: 联系
-  url: /contact/

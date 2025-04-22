@@ -1,0 +1,110 @@
+---
+layout: default
+title: Download
+permalink: /download/
+---
+
+<style>
+  body {
+    margin: 0;
+    background-color: #007BFF;
+    color: #fff;
+    font-family: "Arial", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+  }
+
+  .logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 24px;
+    margin-bottom: 30px;
+  }
+
+  .store-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .store-button {
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+
+  .store-button:hover {
+    background-color: #222;
+  }
+
+  .store-button img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+
+  @media (max-width: 500px) {
+    .logo {
+      width: 100px;
+      height: 100px;
+    }
+
+    .store-button {
+      font-size: 16px;
+      padding: 8px 12px;
+    }
+
+    .store-button img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+</style>
+
+<body>
+  <img src="{{ '/assets/images/icon_cat_bank.png' | relative_url }}" alt="Game Icon" class="logo">
+
+  <div class="store-buttons">
+    <a href="https://apps.apple.com/us/app/cat-bank-idle-cute-tycoon/id6504644778" class="store-button">
+      <img src="{{'/assets/images/Apple_logo_white.svg'}}" alt="Apple">
+      Download on the App Store
+    </a>
+
+    <!-- <a href="https://apps.apple.com/us/app/cat-bank-idle-cute-tycoon/id6504644778" class="store-button">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+      Get it on Google Play
+    </a> -->
+  </div>
+
+  <script>
+    function getRedirectURL() {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+      if (/android/i.test(ua)) {
+        return "https://apps.apple.com/us/app/cat-bank-idle-cute-tycoon/id6504644778";
+      }
+
+      if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+        return "https://apps.apple.com/us/app/cat-bank-idle-cute-tycoon/id6504644778";
+      }
+
+      return "https://apps.apple.com/us/app/cat-bank-idle-cute-tycoon/id6504644778";
+    }
+
+    setTimeout(() => {
+      const targetURL = getRedirectURL();
+      window.location.href = targetURL;
+    }, 3000);
+  </script>
+</body>
